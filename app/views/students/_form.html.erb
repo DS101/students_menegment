@@ -1,0 +1,51 @@
+<%= form_with model: @student, local: true do |form| %>
+
+  <% if @student.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@student.errors.count, "error") %> prohibited
+        this student from being saved:
+      </h2>
+      <ul>
+        <% @student.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= form.label :surname, "Фамилия*" %><br>
+    <%= form.text_field :surname %>
+  </p>
+
+  <p>
+    <%= form.label :name, "Имя*" %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :patronymic, "Отчество(не обязательно)" %><br>
+    <%= form.text_field :patronymic %>
+  </p>
+
+  <p>
+    <%= form.label :cognomen, "Никнэйм(не обязательно, но если указывается, то от 6 до 16 символов)" %><br>
+    <%= form.text_field :cognomen %>
+  </p>
+
+  <p>
+    <%= form.label :gender, "Пол*" %><br>
+    <%= form.radio_button(:gender, "male") %>
+    <%= form.label(:gender_male,   "Муж.") %>
+    <%= form.radio_button(:gender, "female") %>
+    <%= form.label(:gender_female, "Жен.") %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>
+
+<h6>Поля со * обязательны к заполнению</h6>

@@ -1,0 +1,27 @@
+<p>
+  <strong>Surname:</strong>
+  <%= @student.surname %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @student.name %>
+</p>
+
+<p>
+  <strong>Patronymic:</strong>
+  <%= @student.patronymic %>
+</p>
+
+<p>
+  <strong>Cognomen:</strong>
+  <%= @student.cognomen %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @student.gender %>
+</p>
+
+<%= link_to 'Edit', edit_student_path(@student) %>
+<%= link_to 'Back', students_path %>
