@@ -4,6 +4,6 @@ class Student < ApplicationRecord
   validates :cognomen, uniqueness: true, allow_nil: true
   validates :cognomen, length: { in: 6..20 }, allow_nil: true
 
-  # scope :filter_by_gender, -> { where(gender: '1') }
-  scope :filter_by_gender, -> (gender) { where gender: gender }
+  scope :filter_by_selected_gender, -> (gender) { where gender: gender }
+  scope :filter_by_selected_surname, -> (name) { where("surname like ?", "%#{name}%")}
 end

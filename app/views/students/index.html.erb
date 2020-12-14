@@ -3,14 +3,10 @@
 <%= link_to 'New Student', new_student_path %>
 
 <table>
-  <%= form_with url: "/students", method: :get do |form| %>
+  <%= form_with url: "/students", method: :get, action: :index do |form| %>
     <tr>
       <th>
         <%= form.label :selected_surname, "Фамилия*" %><br>
-        <%= form.text_field :selected_surname %>
-      </th>
-      <th>
-        <%= form.label :selected_surname, "Имя" %><br>
         <%= form.text_field :selected_surname %>
       </th>
       <th>
@@ -18,7 +14,6 @@
         <%= form.select :selected_gender, [["slelct...", nil], ["Male", 1], ["Female", 0]] %>
       </th>
       <th>
-        <%= link_to 'filter', students_path %>
         <%= form.submit "Submit Filter" %>
       </th>
     </tr>
