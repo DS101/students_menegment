@@ -3,7 +3,7 @@
 <%= link_to 'New Student', new_student_path %>
 
 <table>
-  <%= form_with url: "/students", method: :get, action: :index do |form| %>
+  <%= form_with url: "/students", method: :get, local: true do |form| %>
     <tr>
       <th>
         <%= form.label :selected_surname, "Фамилия*" %><br>
